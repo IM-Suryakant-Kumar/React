@@ -19,8 +19,9 @@
 ## Commands
 
 -  npx create-react-app imdb
-   -  cd imdb
-   -  npm start
+-  cd imdb
+-  npm start
+-  npm i react-router-dom
 
 # Day-1
 
@@ -39,7 +40,7 @@
    -  [x] Banner
    -  [x] Movies
 -  [x] Responsive
--  [ ] Routing in React
+-  [x] Routing in React
 -  [ ] Pagination functional
 -  [ ] TMDB
 -  [ ] data from there
