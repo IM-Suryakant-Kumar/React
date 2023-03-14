@@ -32,3 +32,15 @@
    -  [x] Pagination
 
 -  Routing in react
+
+# Day-2
+
+-  Improve
+   -  Banner
+   -  Movies
+-  Responsive
+-  Routing
+-  Pagination functional
+-  TMDB
+  - data from there
+  - add it UI

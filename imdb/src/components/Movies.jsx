@@ -3,9 +3,10 @@ import Image from "./image.jpg";
 
 function Movies() {
    return (
-      <div className="-mt-14">
+      <div className="mt-8">
          <div
-            className="mb-8
+            className="
+            mb-8
             font-bold
             text-2xl
             text-center
@@ -17,7 +18,7 @@ function Movies() {
          <div className="flex flex-wrap justify-center">
             <img
                className="
-               w-[200px]
+               w-[160px]
                h-[30vh]
                m-4
                rounded-xl
@@ -29,7 +30,7 @@ function Movies() {
             />
             <img
                className="
-               w-[200px]
+               w-[160px]
                h-[30vh]
                m-4
                rounded-xl
@@ -41,7 +42,7 @@ function Movies() {
             />
             <img
                className="
-               w-[200px]
+               w-[160px]
                h-[30vh]
                m-4
                rounded-xl
@@ -53,7 +54,7 @@ function Movies() {
             />
             <img
                className="
-               w-[200px]
+               w-[160px]
                h-[30vh]
                m-4
                rounded-xl
@@ -65,7 +66,7 @@ function Movies() {
             />
             <img
                className="
-               w-[200px]
+               w-[160px]
                h-[30vh]
                m-4
                rounded-xl
@@ -77,7 +78,7 @@ function Movies() {
             />
             <img
                className="
-               w-[200px]
+               w-[160px]
                h-[30vh]
                m-4
                rounded-xl
