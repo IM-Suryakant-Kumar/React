@@ -5,14 +5,16 @@ function Banner() {
       <>
          <div
             className="
-               bg-banner h-[44vh]
+               bg-banner h-[40vh] md:h-[60vh]
                bg-center bg-cover
                flex items-end
                "
          >
             <div
                className="
-                  text-xl text-white
+                  text-xl
+                  md:text-3xl
+                  text-white
                   bg-gray-900 bg-opacity-60
                   p-4
                   text-center

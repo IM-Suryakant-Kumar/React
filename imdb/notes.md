@@ -36,11 +36,11 @@
 # Day-2
 
 -  Improve
-   -  Banner
-   -  Movies
--  Responsive
--  Routing
--  Pagination functional
--  TMDB
-  - data from there
-  - add it UI
+   -  [x] Banner
+   -  [x] Movies
+-  [x] Responsive
+-  [ ] Routing in React
+-  [ ] Pagination functional
+-  [ ] TMDB
+-  [ ] data from there
+-  [ ] add it UI
