@@ -20,7 +20,6 @@ function App() {
                      <>
                         <Banner></Banner>
                         <Movies></Movies>
-                        <Pagination></Pagination>
                      </>
                   }
                ></Route>

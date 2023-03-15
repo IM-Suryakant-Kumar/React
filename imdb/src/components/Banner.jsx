@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Oval } from "react-loader-spinner";
 
 function Banner() {
    let [bannerMovie, setBannerMovie] = useState("");
@@ -19,17 +20,29 @@ function Banner() {
    return (
       <>
          {bannerMovie === "" ? (
-            <h1>...Loding</h1>
+            <div className="flex justify-center">
+               <Oval
+                  height="80"
+                  width="80"
+                  radius="9"
+                  color="gray"
+                  secondaryColor="gray"
+                  ariaLabel="loading"
+                  wrapperStyle
+                  wrapperClass
+               />
+            </div>
          ) : (
             <div
                className={`
-            bg-[url(https://image.tmdb.org/t/p/original/${bannerMovie.backdrop_path})]
             h-[40vh] md:h-[60vh]
             bg-center bg-cover
             flex items-end
             `}
+               style={{
+                  backgroundImage: `url(https://image.tmdb.org/t/p/original/${bannerMovie.backdrop_path})`,
+               }}
             >
-               {console.log(`https://image.tmdb.org/t/p/original/${bannerMovie.backdrop_path}`)}
                <div
                   className="
                text-xl

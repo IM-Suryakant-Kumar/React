@@ -47,4 +47,15 @@
    -  [x] add it UI
    -  [x] images to work
 
+# Day-3
 
+- [ ] Movies Page
+  - [x] Banner -> data
+  - [x] Loader in react app
+  - [x] Pagination
+- [ ] Emojis
+- [ ] Local Storage -> Prevent loss of Favorites Movies
+- [ ] Favorite Page UI
+- [ ] Deployment
+- [ ] Pagination, searching, sorting
+- [ ] Update Deployment
