@@ -41,7 +41,10 @@
    -  [x] Movies
 -  [x] Responsive
 -  [x] Routing in React
--  [ ] Pagination functional
--  [ ] TMDB
--  [ ] data from there
--  [ ] add it UI
+-  [x] Pagination functional
+-  TMDB API
+   -  [x] data from there
+   -  [x] add it UI
+   -  [x] images to work
+
+

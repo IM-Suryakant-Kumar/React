@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Pagination() {
+   let [pageNum, setPage] = useState(1);
+   const onPrev = () => {
+      if (pageNum > 1) {
+         setPage(pageNum - 1);
+      }
+   };
+   const onNext = () => {
+      setPage(pageNum + 1);
+   };
    return (
       <div
          className="
@@ -17,6 +26,7 @@ function Pagination() {
             rounded-l-xl
             border-blue-400
          "
+            onClick={onPrev}
          >
             Previous
          </div>
@@ -27,7 +37,7 @@ function Pagination() {
             p-2 
             border-blue-400"
          >
-            1
+            {pageNum}
          </div>
          <div
             className="
@@ -35,6 +45,7 @@ function Pagination() {
             p-2
             rounded-r-xl
             border-blue-400"
+            onClick={onNext}
          >
             Next
          </div>

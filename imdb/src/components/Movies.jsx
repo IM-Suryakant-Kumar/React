@@ -1,6 +1,9 @@
 import React from "react";
+import axios from "axios";
 
 function Movies() {
+   
+   
    return (
       <div className="mt-8">
          <div
