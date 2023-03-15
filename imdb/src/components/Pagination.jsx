@@ -5,9 +5,11 @@ function Pagination(props) {
    return (
       <div
          className="
+         select-none
          flex
          justify-center
          my-4
+         text-gray-900
       "
       >
          <div
@@ -24,6 +26,7 @@ function Pagination(props) {
          </div>
          <div
             className="
+            select-none
             border-2
             border-r-0
             p-2 
@@ -33,6 +36,7 @@ function Pagination(props) {
          </div>
          <div
             className="
+            select-none
             border-2
             p-2
             rounded-r-xl

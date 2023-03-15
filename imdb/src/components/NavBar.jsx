@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../download.png";
+import { Link } from "react-router-dom";
 function NavBar() {
    return (
       <div
@@ -10,22 +11,22 @@ function NavBar() {
       "
       >
          <img src={Logo} className="w-[50px]" alt="Logo" />
-         <h3
+         <Link to="/"
             className="font-bold
             text-xl
             text-blue-400
          "
          >
             Movies
-         </h3>
-         <h3
+         </Link>
+         <Link to="/fav"
             className="font-bold
             text-xl
             text-blue-400
          "
          >
             Favorites
-         </h3>
+         </Link>
       </div>
    );
 }

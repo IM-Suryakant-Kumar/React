@@ -49,13 +49,14 @@
 
 # Day-3
 
-- [ ] Movies Page
+- [x] Movies Page
   - [x] Banner -> data
   - [x] Loader in react app
   - [x] Pagination
-- [ ] Emojis
+- [x] Emojis
+- [x] Deployment
+- [x] Link our pages
 - [ ] Local Storage -> Prevent loss of Favorites Movies
 - [ ] Favorite Page UI
-- [ ] Deployment
 - [ ] Pagination, searching, sorting
 - [ ] Update Deployment
