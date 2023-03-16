@@ -54,24 +54,11 @@ function Movies() {
 
    return (
       <div className="mt-8">
-         <div
-            className="
-            mb-8
-            font-bold
-            text-2xl
-            text-center
-            text-gray-900
-            "
-         >
+         <div className=" mb-8 font-bold text-2xl text-center text-gray-900 ">
             Trending Movies
          </div>
 
-         <div
-            className="
-         flex flex-wrap
-         justify-center
-         "
-         >
+         <div className=" flex flex-wrap justify-center ">
             {movies.length === 0 ? (
                <div className="flex justify-center cursor-default">
                   <Oval
@@ -98,30 +85,13 @@ function Movies() {
                         }}
                      >
                         <div
-                           className="
-                        bg-center bg-cover
-                        w-[160px]
-                        h-[30vh]
-                        md:h-[40vh]
-                        md:w-[180px]
-                        m-4
-                        rounded-xl
-                        hover:scale-110
-                        duration-300
-                        flex items-end
-                        relative"
+                           className=" bg-center bg-cover w-[160px] h-[30vh] md:h-[40vh] md:w-[180px] m-4 rounded-xl hover:scale-110 duration-300 flex items-end relative"
                            style={{
                               backgroundImage: `url(https://image.tmdb.org/t/p/original/${movie.poster_path})`,
                            }}
                         >
                            <div
-                              className="
-                           p-2
-                           bg-gray-900
-                           rounded-xl
-                           cursor-pointer
-                           absolute top-2 right-2
-                           "
+                              className=" p-2 bg-gray-900 rounded-xl cursor-pointer absolute top-2 right-2 "
                               style={{
                                  display:
                                     hovered === movie.id ? "block" : "none",
@@ -147,16 +117,7 @@ function Movies() {
                                  </div>
                               )}
                            </div>
-                           <div
-                              className="
-                                 font-bold text-white
-                                 bg-gray-900 bg-opacity-60
-                                 p-2
-                                 rounded-b-xl
-                                 text-center
-                                 w-full
-                     "
-                           >
+                           <div className=" font-bold text-white bg-gray-900 bg-opacity-60 p-2 rounded-b-xl text-center w-full">
                               {movie.title || movie.name}
                            </div>
                         </div>

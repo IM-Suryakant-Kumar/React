@@ -49,14 +49,20 @@
 
 # Day-3
 
-- [x] Movies Page
-  - [x] Banner -> data
-  - [x] Loader in react app
-  - [x] Pagination
-- [x] Emojis
-- [x] Deployment
-- [x] Link our pages
-- [ ] Local Storage -> Prevent loss of Favorites Movies
-- [ ] Favorite Page UI
-- [ ] Pagination, searching, sorting
-- [ ] Update Deployment
+-  [x] Movies Page
+   -  [x] Banner -> data
+   -  [x] Loader in react app
+   -  [x] Pagination
+-  [x] Emojis
+-  [x] Deployment
+-  [x] Link our pages
+
+## Todo
+
+### Setup the project
+
+-  [x] static UI -> React and Tailwind.css
+   -  [x] how to create tables with tailwind -> how to use someone else code
+   -  [x] Make UI dynamic
+-  [ ] Local Storage
+-  [ ] searching, pagination, filtering, sorting
