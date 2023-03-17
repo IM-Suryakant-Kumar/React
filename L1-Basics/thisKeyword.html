@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Use Of This</title>
+   </head>
+   <body>
+      <h1>This Keyword Use</h1>
+
+      <script>
+         //  console.log(this); // widow
+
+         //  function fn() {
+         //     console.log(this);
+         //  }
+
+         //  fn(); // window => window.fn()
+
+         //  const obj = {
+         //     name: "Sujeet",
+         //     func: fn,
+         //  };
+
+         //  obj.func(); // self object
+         // ----------------------------------------------------------------
+         // function fn() {
+         //     console.log(this);
+         //     function abc() {
+         //         console.log(this);
+         //     }
+
+         //     abc();
+         // }
+
+         // const obj = {
+         //     name: "Sujeet",
+         //     func : fn
+         // }
+
+         // obj.func();
+
+         // ----------------------------------------------------------------
+         // Method 1 -> bind function
+         //  function fn() {
+         //     console.log(this);
+         //     function abc() {
+         //        console.log(this);
+         //     }
+         //     let ret = abc.bind(this);
+         //     ret()
+         //  }
+
+         //  const obj = {
+         //     name: "Sujeet",
+         //     func: fn,
+         //  };
+
+         //  obj.func();
+         // ----------------------------------------------------------------
+         //  Method 2 -> arrow function
+        //  function fn() {
+        //     console.log(this);
+        //     let  abc = () => {
+        //        console.log(this);
+        //     }
+
+        //     abc();
+            
+        //  }
+
+        //  const obj = {
+        //     name: "Sujeet",
+        //     func: fn,
+        //  };
+
+        //  obj.func();
+      </script>
+   </body>
+</html>
