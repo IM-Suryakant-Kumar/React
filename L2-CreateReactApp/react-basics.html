@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- Algo -->
+      <script
+         crossorigin
+         src="https://unpkg.com/react@18/umd/react.development.js"
+      ></script>
+      <!-- ReactDOM -->
+      <script
+         crossorigin
+         src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      ></script>
+      <!-- Babel -->
+      <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+      <title>Document</title>
+   </head>
+   <body>
+      <div id="root"></div>
+
+      <script type="text/babel">
+         //  let elem = document.createElement("h1");
+         //  elem.innerText = "hello";
+         //  let root = document.querySelector("#root");
+         //  console.log(elem);
+         //  root.appendChild(elem);
+         // ---------------------------------------------------
+         //   let elem = React.createElement("h1", {
+         //      children: ["Hello"],
+         //   });
+         // //   console.log(elem);
+         //   ReactDOM.render(elem, root)
+         // ----------------------------------------------------
+
+         // Functional Component
+         function Element({ name = "default", place="default" }) {
+            console.log(name);
+            return (
+               <div>
+                  <h1>Hello {name}</h1>
+                  <h2>{place}</h2>
+               </div>
+            );
+         }
+
+         function Main() {
+            return (
+               <React.Fragment>
+                  <Element name="Sujeet" place="Bihar" />
+                  <Element />
+                  <Element />
+                  <Element />
+                  <Element />
+               </React.Fragment>
+            );
+         }
+
+         ReactDOM.render(<Main />, document.getElementById("root"));
+         //  ReactDOM.render(<Element />, document.getElementById("root"));
+      </script>
+   </body>
+</html>
