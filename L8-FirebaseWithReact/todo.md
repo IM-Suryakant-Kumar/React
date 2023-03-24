@@ -14,3 +14,7 @@
    -  Hosting : hosting
 
 -  Authentication : login and signup using firebase
+    - go and enable the service
+      - enable email and password
+    - Login is done
+- Database : Firestore
