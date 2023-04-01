@@ -1,0 +1,31 @@
+/* feeds */
+.feed-cont {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+/* NavBar */
+.navbar-cont {
+   padding-left: 2rem;
+   padding-right: 2rem;
+   display: flex;
+   align-items: center;
+   height: 8vh;
+}
+
+.nav-icons-cont {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.nav-icons {
+   color: black;
+   margin-right: 0.4rem;
+}
+
+/* upload button */
+.upload-cont {
+   width: 17rem;
+   margin-top: 1rem;
+}

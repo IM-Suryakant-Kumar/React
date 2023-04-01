@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
@@ -6,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { useState } from "react";
 import CloudUploadIcon from "@mui/icons-material/CloudUpload";
+import { Link } from "react-router-dom";
 
 function Signup() {
    const [email, setEmail] = useState("");
@@ -16,12 +16,20 @@ function Signup() {
    };
 
    return (
-      <>
+      <div style={{ maxWidth: "400px", margin: "auto" }}>
          {/* <div>Signup</div> */}
          <Card sx={{ minWidth: 275 }}>
             <CardContent>
-               <img src="insta.png" alt="" height="80px" />
-               <Typography variant="body1" style={{ color: "gray" }}>
+               <img
+                  src="insta.png"
+                  alt=""
+                  height="80px"
+                  style={{ display: "block", margin: "auto" }}
+               />
+               <Typography
+                  variant="body1"
+                  style={{ color: "gray", textAlign: "center" }}
+               >
                   Sign up to see photos and videos from your friend
                </Typography>
                <div>
@@ -83,14 +91,16 @@ function Signup() {
             </CardContent>
          </Card>
          <Card sx={{ minWidth: 275, marginTop: "1rem" }}>
-            <CardContent>
-               <Typography variant="p">Dont't have an account</Typography>
+            <CardContent style={{ textAlign: "center" }}>
+               <Typography variant="p">Have an account?</Typography>
                <Button variant="text">
-                  <Typography>Signup</Typography>
+                  <Typography>
+                     <Link to="/login">log in</Link>
+                  </Typography>
                </Button>
             </CardContent>
          </Card>
-      </>
+      </div>
    );
 }
 

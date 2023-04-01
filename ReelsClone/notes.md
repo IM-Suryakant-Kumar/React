@@ -34,6 +34,13 @@
 -  [x] setup the project
 -  [x] Login Page
    -  [x] styling
-- [ ] Crousel: npm
-- [ ] Signup Page
-- [ ] Styling: Material UI
+-  [x] Crousel: npm
+-  [x] Signup Page
+-  [x] Routing
+-  [x] feed page
+   -  [x] NavBar
+   -  [x] Upload Button
+   -  [x] Loading
+-  [ ] Routing -> ridirects, Private Route
+-  [ ] sign in and signup feature functional
+   -  [ ] firebase

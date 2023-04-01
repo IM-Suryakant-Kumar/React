@@ -1,7 +1,7 @@
 .crousel-container {
    position: relative;
    background-image: url("phone.png");
-   height: 450px;
+   height: 420px;
    width: 200px;
    background-size: contain;
    background-repeat: no-repeat;
@@ -11,4 +11,27 @@
    position: absolute;
    z-index: 2;
    left: 0px;
+}
+
+.login-cont {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 18vw;
+}
+
+.item-center {
+   text-align: center;
+   display: block;
+   margin: auto;
+}
+
+@media screen and (max-width: 700px) {
+   .crousel-container {
+      display: none;
+   }
+   .login-form {
+      transform: scale(1.2);
+   }
 }

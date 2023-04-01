@@ -1,11 +1,10 @@
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Typography } from "@mui/material";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function LoginForm() {
    const [email, setEmail] = useState("");
@@ -15,11 +14,19 @@ function LoginForm() {
    };
 
    return (
-      <>
+      <div>
          {/* <div>LoginForm</div> */}
-         <Card sx={{ minWidth: 275 }}>
+         <Card
+            sx={{ minWidth: 275, maxWidth: 370 }}
+            style={{ border: "2px solid lightgray" }}
+         >
             <CardContent>
-               <img src="insta.png" alt="" height="80px" />
+               <img
+                  src="insta.png"
+                  alt=""
+                  height="80px"
+                  className="item-center"
+               />
                <div>
                   <TextField
                      type="email"
@@ -42,20 +49,30 @@ function LoginForm() {
                      onChange={(e) => setPassword(e.target.value)}
                   />
                </div>
-               <Button variant="contained" size="normal" onClick={loginHelper}>
+               <Button
+                  fullWidth
+                  variant="contained"
+                  size="normal"
+                  onClick={loginHelper}
+               >
                   <Typography variant="h6">Log in</Typography>
                </Button>
             </CardContent>
          </Card>
-         <Card sx={{ minWidth: 275, marginTop: "1rem" }}>
-            <CardContent>
+         <Card
+            sx={{ minWidth: 275, maxWidth: 370, marginTop: "1rem" }}
+            style={{ border: "2px solid lightgray" }}
+         >
+            <CardContent className="item-center">
                <Typography variant="p">Dont't have an account</Typography>
                <Button variant="text">
-                  <Typography>Signup</Typography>
+                  <Typography>
+                     <Link to="/signup">Signup</Link>
+                  </Typography>
                </Button>
             </CardContent>
          </Card>
-      </>
+      </div>
    );
 }
 
