@@ -1,0 +1,14 @@
+.crousel-container {
+   position: relative;
+   background-image: url("phone.png");
+   height: 450px;
+   width: 200px;
+   background-size: contain;
+   background-repeat: no-repeat;
+}
+
+.crousel-wrapper {
+   position: absolute;
+   z-index: 2;
+   left: 0px;
+}
