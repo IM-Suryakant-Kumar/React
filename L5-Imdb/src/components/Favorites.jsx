@@ -100,6 +100,7 @@ function Favorites() {
    let [genres, setGenres] = useState([]);
    let [movies, setMovies] = useState(sampleMovies);
    let [searchItem, setSearchItem] = useState("");
+   let [currGenre, setCurrGenre] = useState("All Genres");
 
    // delete movie
    const deleteMovie = (id) => {
@@ -116,6 +117,10 @@ function Favorites() {
       setGenres(["All Genres", ...temp]);
    }, []);
 
+   const onCurrGenre = (genre) => {
+      setCurrGenre(genre);
+   };
+
    // search something
    // map a searched movies -> searched
    let searchedMovies =
@@ -127,13 +132,24 @@ function Favorites() {
               return movieName.toLowerCase().includes(lowerCharSearch);
            });
 
+   // filter
+   let filteredMovies =
+      currGenre === "All Genres"
+         ? searchedMovies
+         : searchedMovies.filter((searchedMovie) => {
+              return genreids[searchedMovie.genre_ids[0]] === currGenre;
+           });
+
    return (
       <>
          {/* genres */}
          <div className="mt-6 flex space-x-2 justify-center">
             {genres.map((genre) => {
                return (
-                  <button className="py-1 px-2 bg-gray-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400">
+                  <button
+                     className={genre === currGenre ? "py-1 px-2 bg-blue-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400" : "py-1 px-2 bg-gray-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400"}
+                     onClick={() => onCurrGenre(genre)}
+                  >
                      {genre}
                   </button>
                );
@@ -215,7 +231,7 @@ function Favorites() {
                   </tr>
                </thead>
                <tbody className="divide-y divide-gray-100 border-t border-gray-100">
-                  {searchedMovies.map((movie) => {
+                  {filteredMovies.map((movie) => {
                      console.log(movie);
                      return (
                         <tr className="hover:bg-gray-50" key={movie.id}>
