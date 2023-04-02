@@ -12,7 +12,9 @@ function Pagination(props) {
             rounded-l-xl
             border-blue-400
          "
-            onClick={onPrev}
+            onClick={() => {
+               onPrev(pageNum - 1);
+            }}
          >
             Previous
          </div>
@@ -21,7 +23,9 @@ function Pagination(props) {
          </div>
          <div
             className=" select-none border-2 p-2 rounded-r-xl border-blue-400"
-            onClick={onNext}
+            onClick={() => {
+               onNext(pageNum + 1);
+            }}
          >
             Next
          </div>

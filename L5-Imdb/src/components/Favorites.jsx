@@ -101,6 +101,10 @@ function Favorites() {
    let [movies, setMovies] = useState(sampleMovies);
    let [searchItem, setSearchItem] = useState("");
    let [currGenre, setCurrGenre] = useState("All Genres");
+   let [currRatingOrder, setCurrRatingOrder] = useState(0);
+   let [currPopularityOrder, setCurrPopularityOrder] = useState(0);
+   let [noOfElems, setNoOfElems] = useState(2);
+   let [currPage, setCurrPage] = useState(1);
 
    // delete movie
    const deleteMovie = (id) => {
@@ -119,6 +123,7 @@ function Favorites() {
 
    const onCurrGenre = (genre) => {
       setCurrGenre(genre);
+      setCurrPage(1);
    };
 
    // search something
@@ -140,6 +145,48 @@ function Favorites() {
               return genreids[searchedMovie.genre_ids[0]] === currGenre;
            });
 
+   // sorting -> rating
+   if (currRatingOrder !== 0) {
+      if (currRatingOrder === 1) {
+         filteredMovies = filteredMovies.sort((movieA, movieB) => {
+            return movieA.vote_average - movieB.vote_average;
+         });
+      } else if (currRatingOrder === -1) {
+         filteredMovies = filteredMovies.sort((movieA, movieB) => {
+            return movieB.vote_average - movieA.vote_average;
+         });
+      }
+   }
+   // sorting -> popularity
+   if (currPopularityOrder !== 0) {
+      if (currPopularityOrder === 1) {
+         filteredMovies = filteredMovies.sort((movieA, movieB) => {
+            return movieA.popularity - movieB.popularity;
+         });
+      } else if (currPopularityOrder === -1) {
+         filteredMovies = filteredMovies.sort((movieA, movieB) => {
+            return movieB.popularity - movieA.popularity;
+         });
+      }
+   }
+
+   // pagination
+   let si = noOfElems * (currPage - 1);
+   let ei = si + noOfElems;
+   let maxPageNum = Math.ceil(filteredMovies.length / noOfElems);
+   filteredMovies = filteredMovies.slice(si, ei);
+
+   const onPrev = (pageNum) => {
+      if (pageNum > 0) {
+         setCurrPage(pageNum);
+      }
+   };
+   const onNext = (pageNum) => {
+      if (pageNum <= maxPageNum) {
+         setCurrPage(pageNum);
+      }
+   };
+
    return (
       <>
          {/* genres */}
@@ -147,8 +194,14 @@ function Favorites() {
             {genres.map((genre) => {
                return (
                   <button
-                     className={genre === currGenre ? "py-1 px-2 bg-blue-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400" : "py-1 px-2 bg-gray-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400"}
-                     onClick={() => onCurrGenre(genre)}
+                     className={
+                        genre === currGenre
+                           ? "py-1 px-2 bg-blue-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400"
+                           : "py-1 px-2 bg-gray-400 rounded-lg text-lg font-bold text-white hover:bg-blue-400"
+                     }
+                     onClick={() => {
+                        onCurrGenre(genre);
+                     }}
                   >
                      {genre}
                   </button>
@@ -162,11 +215,19 @@ function Favorites() {
                placeholder="search"
                className="border-2 py-1 px-2 outline-none text-center"
                value={searchItem}
-               onChange={(e) => setSearchItem(e.target.value)}
+               onChange={(e) => {
+                  setSearchItem(e.target.value);
+                  setCurrPage(1);
+               }}
             />
             <input
                className="border-2 py-1 px-2 outline-none text-center"
                type="number"
+               value={noOfElems}
+               onChange={(e) => {
+                  setNoOfElems(e.target.value);
+                  setCurrPage(1);
+               }}
             />
          </div>
          {/* Dashboard Table */}
@@ -189,12 +250,20 @@ function Favorites() {
                               src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-up-arrows-those-icons-lineal-those-icons-3.png"
                               className="mr-2 cursor-pointer"
                               alt=""
+                              onClick={() => {
+                                 setCurrRatingOrder(1);
+                                 setCurrPage(1);
+                              }}
                            />
                            <div>Rating</div>
                            <img
                               src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-down-arrows-those-icons-lineal-those-icons-4.png"
                               className="ml-2 mr-2"
                               alt=""
+                              onClick={() => {
+                                 setCurrRatingOrder(-1);
+                                 setCurrPage(1);
+                              }}
                            />
                         </div>
                      </th>
@@ -207,12 +276,20 @@ function Favorites() {
                               src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-up-arrows-those-icons-lineal-those-icons-3.png"
                               className="mr-2 cursor-pointer"
                               alt=""
+                              onClick={() => {
+                                 setCurrPopularityOrder(1);
+                                 setCurrPage(1);
+                              }}
                            />
                            <div>Popularity</div>
                            <img
                               src="https://img.icons8.com/external-those-icons-lineal-those-icons/24/000000/external-down-arrows-those-icons-lineal-those-icons-4.png"
                               className="ml-2 mr-2"
                               alt=""
+                              onClick={() => {
+                                 setCurrPopularityOrder(-1);
+                                 setCurrPage(1);
+                              }}
                            />
                         </div>
                      </th>
@@ -277,7 +354,11 @@ function Favorites() {
             </table>
          </div>
          {/* Pagination */}
-         <Pagination></Pagination>
+         <Pagination
+            pageNum={currPage}
+            onPrev={onPrev}
+            onNext={onNext}
+         ></Pagination>
       </>
    );
 }
