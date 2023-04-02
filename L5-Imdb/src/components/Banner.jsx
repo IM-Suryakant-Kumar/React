@@ -34,14 +34,14 @@ function Banner() {
             </div>
          ) : (
             <div
-               className={`h-[40vh] md:h-[60vh]bg-center bg-coverflex items-end`}
+               className={`h-[40vh] md:h-[60vh]bg-center bg-cover flex items-end`}
                style={{
                   backgroundImage: `url(https://image.tmdb.org/t/p/original/${bannerMovie.backdrop_path})`,
                }}
             >
-               <div className=" text-xl md:text-3xl text-white bg-gray-900 bg-opacity-60 p-4 text-center w-full">
+               {/* <div className=" text-xl md:text-3xl text-white bg-gray-900 bg-opacity-60 p-4 text-center w-full">
                   {bannerMovie.name}
-               </div>
+               </div> */}
             </div>
          )}
       </>
